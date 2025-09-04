@@ -2,29 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <!-- TODO: 검색/공유용 설명: 당신 논문 소개 한두 문장으로 바꾸세요 -->
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="(예시) 본 논문은 Sparse View에서의 고품질 NVS를 위한 XXXX 방법을 제안합니다.">
+  <!-- TODO: 검색 키워드: 논문 키워드로 교체 -->
+  <meta name="keywords" content="your keywords, novel view synthesis, your model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- TODO: 브라우저 탭/검색 결과 제목: 논문 제목으로 교체 -->
+  <title>Your Paper Title</title>
+
+  <!-- (선택) Google Analytics: 원본 템플릿에서 제거 권장. 필요 없으면 아래 두 줄 모두 삭제하세요 -->
+  <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
+  -->
 
+  <!-- TODO: 폰트는 그대로 써도 되고, Inter 등으로 바꾸고 싶으면 이 링크를 교체 -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
+  <!-- Bulma / 스타일시트: 경로 유지. static 폴더 구조를 그대로 repo에 넣으세요 -->
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -32,8 +35,10 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <!-- TODO: 파비콘 이미지 교체 (선택) -->
   <link rel="icon" href="./static/images/favicon.svg">
 
+  <!-- 라이브러리 스크립트: 경로 유지 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -42,6 +47,7 @@
 </head>
 <body>
 
+<!-- 상단 네비게이션: 필요 없으면 통째로 삭제해도 됩니다 -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -52,29 +58,21 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+      <!-- TODO: 홈 아이콘 링크를 본인 개인/랩 페이지로 바꾸세요 (선택) -->
+      <a class="navbar-item" href="https://your-homepage.example.com">
+        <span class="icon"><i class="fas fa-home"></i></span>
       </a>
 
+      <!-- TODO: 드롭다운 “More Research” 목록을 본인/랩 관련 링크로 교체하거나 삭제 -->
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
+          <a class="navbar-item" href="https://example.com/project1">Project 1</a>
+          <a class="navbar-item" href="https://example.com/project2">Project 2</a>
+          <a class="navbar-item" href="https://example.com/project3">Project 3</a>
+          <a class="navbar-item" href="https://example.com/project4">Project 4</a>
         </div>
       </div>
     </div>
@@ -82,401 +80,300 @@
   </div>
 </nav>
 
-
+<!-- 히어로(제목/저자/링크) -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+
+          <!-- TODO: 논문 제목으로 교체 -->
+          <h1 class="title is-1 publication-title">Your Paper Title</h1>
+
+          <!-- TODO: 저자/소속/프로필 링크 교체. <sup>n</sup>는 소속 번호 -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://yourpage.example.com">First Author</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="https://coauthor1.example.com">Second Author</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="https://coauthor2.example.com">Third Author</a><sup>1</sup>
             </span>
           </div>
 
+          <!-- TODO: 소속명 교체 -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Your University,</span>
+            <span class="author-block"><sup>2</sup>Your Lab / Company</span>
           </div>
 
+          <!-- 링크 버튼들: Paper/PDF, arXiv, Video, Code, Data 등 필요에 맞게 수정/삭제 -->
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+
+              <!-- TODO: PDF 링크 (있다면) -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://your-domain.com/your_paper.pdf"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
+
+              <!-- TODO: arXiv 링크 -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/abs/XXXX.XXXXX"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
+
+              <!-- TODO: 티저/발표 영상 (유튜브 등) -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Code Link. -->
+
+              <!-- TODO: 코드 저장소 링크 -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/yourname/yourrepo"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
+                  <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
-                  </a>
+                </a>
               </span>
-              <!-- Dataset Link. -->
+
+              <!-- TODO: 데이터셋/추가 자료가 있으면 사용, 없으면 삭제 -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="https://your-dataset-link.example.com"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
+                  <span class="icon"><i class="far fa-images"></i></span>
                   <span>Data</span>
-                  </a>
+                </a>
+              </span>
+
             </div>
 
+            <!-- TODO: 학회/연도/발표형식 표기 -->
+            <h2 class="subtitle is-size-4 has-text-centered">
+              Your Conference 2025 <span style="color: red;"> (Oral/Poster)</span>
+            </h2>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- 티저 섹션 -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
+      <!-- TODO: 티저 영상 파일 교체 (mp4 경로). static/videos 폴더에 올리세요 -->
+      <video id="teaser" autoplay muted loop playsinline height="100%" poster="./static/images/spinner.svg">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
       </video>
+
+      <!-- TODO: 티저 요약 문구 교체 (한두 문장) -->
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        Your method summary sentence here. Explain in one or two lines.
       </h2>
+
+      <!-- TODO: 브라우저 권장 문구(선택/수정) -->
+      <p style="font-size: small; margin-top: 10px; text-align: center;">
+        (본 페이지는 영상이 많습니다. 데스크톱 Chrome/Edge 사용을 권장합니다.)
+      </p>
     </div>
   </div>
 </section>
 
-
+<!-- (선택) 결과 캐러셀: 영상들을 바꾸거나 섹션을 삭제해도 됩니다 -->
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
+        <!-- TODO: 각 아이템의 mp4 경로 교체 또는 필요 없는 아이템 삭제 -->
+        <div class="item item-example1">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/example1.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
+        <div class="item item-example2">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/example2.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+        <!-- 필요 없는 블록은 지우세요 -->
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- 본문 섹션들 -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+
+    <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
+      <!-- 너비를 조금 더 넓히고 싶다면 is-four-fifths 클래스를 추가 -->
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+          <!-- TODO: 초록 내용 교체 -->
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Write your abstract here. Summarize the problem, approach, and main results in 5–8 sentences.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
 
-    <!-- Paper video. -->
+    <!-- Paper video (유튜브 임베드) -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+          <!-- TODO: 유튜브 영상 ID 교체 -->
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
+
   </div>
 </section>
 
-
+<!-- 예시: 시연/응용/애니메이션 등 섹션 (필요에 따라 수정/삭제) -->
 <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      <!-- Demo/Use-case A -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
+          <h2 class="title is-3">Demo A</h2>
+          <!-- TODO: 설명 작성 -->
+          <p>Describe your first demo/use-case here.</p>
+          <!-- TODO: mp4 교체 -->
+          <video autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/demo_a.mp4" type="video/mp4">
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
+      <!-- Demo/Use-case B -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Demo B</h2>
         <div class="columns is-centered">
           <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
+            <!-- TODO: 설명 작성 -->
+            <p>Describe your second demo/use-case here.</p>
+            <!-- TODO: mp4 교체 -->
+            <video controls playsinline height="100%">
+              <source src="./static/videos/demo_b.mp4" type="video/mp4">
             </video>
           </div>
-
         </div>
       </div>
-    </div>
-    <!--/ Matting. -->
 
-    <!-- Animation. -->
+    </div>
+
+    <!-- 또 다른 결과/애니메이션 섹션 -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">More Results</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <h3 class="title is-4">Subsection Title</h3>
         <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
+          <!-- TODO: 설명 작성 -->
+          <p>Explain what this result shows.</p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
+        <!-- TODO: 이미지 교체 -->
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
+          <img src="./static/images/your_result_figure.png" alt="Result Figure" style="max-width: 95%;">
+        </div>
+
+        <!-- (선택) 재생 영상 -->
+        <div class="content has-text-centered">
+          <!-- TODO: mp4 교체, 필요 없으면 삭제 -->
+          <video controls muted preload playsinline width="75%">
+            <source src="./static/videos/your_result_video.mp4" type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
 
       </div>
     </div>
-    <!--/ Animation. -->
 
+  </div>
+</section>
 
-    <!-- Concurrent Work. -->
+<!-- 관련 링크/동시대 연구: 필요 시 수정/삭제 -->
+<section class="section">
+  <div class="container is-max-desktop">
+
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
         <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
+          <!-- TODO: 관련 연구/링크로 교체 -->
+          <p>List related work or helpful resources here.</p>
+          <p><a href="https://arxiv.org/abs/xxxx.xxxxx">Example related paper 1</a></p>
+          <p><a href="https://arxiv.org/abs/yyyy.yyyyy">Example related paper 2</a></p>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
 
   </div>
 </section>
 
-
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <!-- TODO: 실제 BibTeX으로 교체 -->
+    <pre><code>@inproceedings{yourkey2025,
+  author    = {Your Name and Coauthors},
+  title     = {Your Paper Title},
+  booktitle = {Your Conference},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
 
-
+<!-- 푸터 -->
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+      <!-- TODO: PDF 아이콘 링크 교체 또는 삭제 -->
+      <a class="icon-link" href="./static/paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <!-- TODO: 깃허브 아이콘 링크 교체 -->
+      <a class="icon-link" href="https://github.com/yourname" class="external-link">
         <i class="fab fa-github"></i>
       </a>
     </div>
+
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
+          <!-- 라이선스 문구: 템플릿 요구사항이므로 남겨두고, 링크만 유지 -->
           <p>
             This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            This means you are free to borrow the
+            <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
             we just ask that you link back to this page in the footer.
+            <!-- TODO: Analytics를 제거했다면, 이 문장(아래)은 그대로 두되 실제 GA 스니펫은 head에서 삭제 -->
             Please remember to remove the analytics code included in the header of the website which
             you do not want on your website.
           </p>
