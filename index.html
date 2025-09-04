@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <!-- TODO: 검색/공유용 설명: 당신 논문 소개 한두 문장으로 바꾸세요 -->
   <meta name="description"
-        content="(예시) 본 논문은 Sparse View에서의 고품질 NVS를 위한 XXXX 방법을 제안합니다.">
+        content="COREA: Coarse-to-Fine 3D Representation Alignment Between Relightable 3D Gaussians and SDF via Bidirectional 3D-to-3D Supervision">
   <!-- TODO: 검색 키워드: 논문 키워드로 교체 -->
-  <meta name="keywords" content="your keywords, novel view synthesis, your model">
+  <meta name="keywords" content="3D Gaussian Splatting, SDF, PBR, relightable 3D, geometry reconstruction, COREA">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- TODO: 브라우저 탭/검색 결과 제목: 논문 제목으로 교체 -->
-  <title>Your Paper Title</title>
+  <title>COREA: Coarse-to-Fine 3D Representation Alignment Between Relightable 3D Gaussians and SDF via Bidirectional 3D-to-3D Supervision</title>
 
   <!-- (선택) Google Analytics: 원본 템플릿에서 제거 권장. 필요 없으면 아래 두 줄 모두 삭제하세요 -->
   <!--
@@ -88,23 +88,11 @@
         <div class="column has-text-centered">
 
           <!-- TODO: 논문 제목으로 교체 -->
-          <h1 class="title is-1 publication-title">Your Paper Title</h1>
+          <h1 class="title is-1 publication-title">COREA: Coarse-to-Fine 3D Representation Alignment Between<br>Relightable 3D Gaussians and SDF via Bidirectional 3D-to-3D Supervision</h1>
 
           <!-- TODO: 저자/소속/프로필 링크 교체. <sup>n</sup>는 소속 번호 -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://yourpage.example.com">First Author</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://coauthor1.example.com">Second Author</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://coauthor2.example.com">Third Author</a><sup>1</sup>
-            </span>
-          </div>
-
-          <!-- TODO: 소속명 교체 -->
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Your University,</span>
-            <span class="author-block"><sup>2</sup>Your Lab / Company</span>
+            <span class="author-block">Anonymous author</span>
           </div>
 
           <!-- 링크 버튼들: Paper/PDF, arXiv, Video, Code, Data 등 필요에 맞게 수정/삭제 -->
@@ -192,31 +180,21 @@
   </div>
 </section>
 
-<!-- (선택) 결과 캐러셀: 영상들을 바꾸거나 섹션을 삭제해도 됩니다 -->
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <!-- TODO: 각 아이템의 mp4 경로 교체 또는 필요 없는 아이템 삭제 -->
-        <div class="item item-example1">
-          <video poster="" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/example1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-example2">
-          <video poster="" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/example2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- 필요 없는 블록은 지우세요 -->
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- 본문 섹션들 -->
 <section class="section">
   <div class="container is-max-desktop">
+
+    <!-- Figure -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-centered">
+          <!-- TODO: 메인 figure 이미지 교체 -->
+          <img src="./static/images/overview_figure.png" alt="COREA Overview" style="max-width: 100%;">
+        </div>
+      </div>
+    </div>
 
     <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
@@ -226,20 +204,47 @@
         <div class="content has-text-justified">
           <!-- TODO: 초록 내용 교체 -->
           <p>
-            Write your abstract here. Summarize the problem, approach, and main results in 5–8 sentences.
+            We present a first unified framework that jointly learns relightable 3D Gaussians and a neural Signed Distance Field (SDF) through coarse-to-fine bidirectional 3D-to-3D supervision, enabling accurate geometry reconstruction and Physically-Based Rendering (PBR) with storage efficiency.
+          </p>
+          <p>
+            While recent 3D Gaussian Splatting (3DGS) works extend beyond Novel-View Synthesis (NVS) to mesh reconstruction and PBR, existing methods infer 3D properties indirectly from rendered 2D images, producing coarse meshes and unreliable BRDF-lighting decomposition. To address these limitations, our approach jointly optimizes SDF and 3DGS directly in 3D space.
+          </p>
+          <p>
+            Depth‑Guided SDF Alignment uses Gaussian depth maps to anchor SDF rays and refine SDF normals via pixel‑wise depth gradients. Normal‑Guided 3DGS Alignment projects Gaussians onto the SDF surface, supervises Gaussian normals with SDF normals, and applies normal‑aware densification to capture fine‑scale geometry.
+          </p>
+          <p>
+            To mitigate excessive Gaussian splitting during normal‑aware densification, we propose Dual Density Control, which effectively balances geometric fidelity and memory efficiency. The precisely aligned geometry supplies accurate normals for differentiable PBR, enabling faithful Bidirectional Reflectance Distribution Function and lighting decomposition.
+          </p>
+          <p>
+            Experiments on standard benchmarks demonstrate State-Of-The-Art performance in NVS, mesh reconstruction, and PBR while using the fewer Gaussian primitives.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- Paper video (유튜브 임베드) -->
+    <!-- Comparison Section -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <!-- TODO: 유튜브 영상 ID 교체 -->
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h2 class="title is-3">Comparison</h2>
+        
+        <!-- Quantitative Comparison -->
+        <div class="content has-text-justified" style="margin-bottom: 2rem;">
+          <h3 class="title is-4">Quantitative Comparison</h3>
+          <p>Our method achieves state-of-the-art performance on both object-level and scene-level novel view synthesis benchmarks, demonstrating superior PSNR, SSIM, and LPIPS metrics compared to existing approaches.</p>
+          <div class="content has-text-centered">
+            <img src="./static/images/quantitative_comparison.png" alt="Quantitative Comparison" style="max-width: 100%;">
+          </div>
+        </div>
+
+        <!-- Qualitative Comparison -->
+        <div class="content has-text-justified" style="margin-bottom: 2rem;">
+          <h3 class="title is-4">Qualitative Comparison</h3>
+          <p>Visual comparison shows our method produces sharper, more detailed results with better geometric accuracy and lighting consistency compared to existing methods.</p>
+          <div class="content has-text-centered">
+            <img src="./static/images/qualitative_comparison_1.png" alt="Qualitative Comparison 1" style="max-width: 100%; margin-bottom: 1rem;">
+            <img src="./static/images/qualitative_comparison_2.png" alt="Qualitative Comparison 2" style="max-width: 100%; margin-bottom: 1rem;">
+            <img src="./static/images/qualitative_comparison_3.png" alt="Qualitative Comparison 3" style="max-width: 100%;">
+          </div>
         </div>
       </div>
     </div>
@@ -247,65 +252,43 @@
   </div>
 </section>
 
-<!-- 예시: 시연/응용/애니메이션 등 섹션 (필요에 따라 수정/삭제) -->
+<!-- Our Results Section -->
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
-
-      <!-- Demo/Use-case A -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Demo A</h2>
-          <!-- TODO: 설명 작성 -->
-          <p>Describe your first demo/use-case here.</p>
-          <!-- TODO: mp4 교체 -->
-          <video autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/demo_a.mp4" type="video/mp4">
-          </video>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Our Results</h2>
+        
+        <!-- Mesh Reconstruction Results -->
+        <div class="content has-text-justified" style="margin-bottom: 2rem;">
+          <h3 class="title is-4">Mesh Reconstruction</h3>
+          <p>Our method produces high-quality 3D meshes with accurate geometry and fine details through the joint optimization of SDF and 3D Gaussians.</p>
+          <div class="content has-text-centered">
+            <div id="mesh-carousel" class="carousel results-carousel">
+              <div class="item item-mesh1">
+                <img src="./static/images/mesh_result_1.png" alt="Mesh Result 1" style="max-width: 100%;">
+              </div>
+              <div class="item item-mesh2">
+                <img src="./static/images/mesh_result_2.png" alt="Mesh Result 2" style="max-width: 100%;">
+              </div>
+              <div class="item item-mesh3">
+                <img src="./static/images/mesh_result_3.png" alt="Mesh Result 3" style="max-width: 100%;">
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- Demo/Use-case B -->
-      <div class="column">
-        <h2 class="title is-3">Demo B</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <!-- TODO: 설명 작성 -->
-            <p>Describe your second demo/use-case here.</p>
-            <!-- TODO: mp4 교체 -->
-            <video controls playsinline height="100%">
-              <source src="./static/videos/demo_b.mp4" type="video/mp4">
+        <!-- Relighting Results -->
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Relighting</h3>
+          <p>Accurate geometry enables faithful physically-based rendering with proper BRDF decomposition and lighting effects.</p>
+          <div class="content has-text-centered">
+            <video controls muted preload playsinline width="75%">
+              <source src="./static/videos/relighting_demo.mp4" type="video/mp4">
             </video>
           </div>
         </div>
-      </div>
-
-    </div>
-
-    <!-- 또 다른 결과/애니메이션 섹션 -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">More Results</h2>
-
-        <h3 class="title is-4">Subsection Title</h3>
-        <div class="content has-text-justified">
-          <!-- TODO: 설명 작성 -->
-          <p>Explain what this result shows.</p>
-        </div>
-        <!-- TODO: 이미지 교체 -->
-        <div class="content has-text-centered">
-          <img src="./static/images/your_result_figure.png" alt="Result Figure" style="max-width: 95%;">
-        </div>
-
-        <!-- (선택) 재생 영상 -->
-        <div class="content has-text-centered">
-          <!-- TODO: mp4 교체, 필요 없으면 삭제 -->
-          <video controls muted preload playsinline width="75%">
-            <source src="./static/videos/your_result_video.mp4" type="video/mp4">
-          </video>
-        </div>
-
       </div>
     </div>
 
@@ -385,3 +368,4 @@
 
 </body>
 </html>
+
